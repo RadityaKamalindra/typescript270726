@@ -8,4 +8,36 @@
  * 2. Implement a type that you defined on 3 students data.
  * 
  * display the student data using console.log.
- */
+ */ 
+
+type Student = {
+    studentId: string;
+    fullName: string;
+    age: number;
+    isActive: boolean;
+};
+
+const student1: Student = {
+    studentId: "5422513201",
+    fullName: "Garnita Putri",
+    age: 17,
+    isActive: true
+};
+
+const student2: Student = {
+    studentId: "542251320",
+    fullName: "Raditya Kamalindra",
+    age: 18,
+    isActive: true
+};
+
+const student3: Student = {
+    studentId: "54225132012",
+    fullName: "Apis Itam",
+    age: 19,
+    isActive: false
+};
+
+console.log("Student 1:", student1);
+console.log("Student 2:", student2);
+console.log("Student 3:", student3);

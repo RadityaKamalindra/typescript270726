@@ -14,3 +14,23 @@
  *  - Final payment
  * 2. Display the calculation results.
  */
+
+const friedRice: number = 18000;
+const mineralWater: number = 5000;
+const quantityFriedRice: number = 3;
+const quantityMineralWater: number = 2;
+const discount: number = 25;
+
+
+
+const totalsego: number = friedRice * quantityFriedRice;
+const totalNgumbi: number = mineralWater * quantityMineralWater;
+
+const GrandTotal: number = totalsego + totalNgumbi;
+const FinalBayar: number = GrandTotal - (GrandTotal * discount / 100);
+
+console.log("Total Harga Nasi Goreng: Rp" + totalsego);
+console.log("Total Harga Minuman: Rp" + totalNgumbi);
+console.log("Total Harga Sebelum Diskon: Rp" + GrandTotal);
+console.log("Total Harga Setelah Diskon: Rp" + FinalBayar);
+

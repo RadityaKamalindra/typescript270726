@@ -1,29 +1,58 @@
 /**
- * An airline automatically determines a passenger's check-in status.
- * Business Rules
- * Step 1
- * If the passenger has not checked in online, display:
- * "Please complete online check-in first.""
+ * Maskapai penerbangan secara otomatis menentukan status check-in penumpang.
+ * Aturan Bisnis
+ * Langkah 1
+ * Jika penumpang belum melakukan check in online, tampilkan:
+ * "Harap selesaikan check-in online terlebih dahulu.""
  * 
- * Otherwise, continue.
- * Step 2
- * If baggage weight exceeds 20 kg:
- * - Business Class → Extra baggage allowed.
- * - Economy Class → Additional baggage fee required.
+ * Jika tidak, lanjutkan.
+ * Langkah 2
+ * Jika berat bagasi melebihi 20 kg:
+ * -Kelas Bisnis → Bagasi tambahan diperbolehkan.
+ * -Kelas Ekonomi → Diperlukan biaya bagasi tambahan.
  * 
  * Otherwise:
- * Proceed to boarding pass printing.
+ * Lanjutkan ke pencetakan boarding pass.
  * 
- * Passenger Information
- * | Information     | Value         |
+ * Informasi Penumpang
+ * | Informasi | Nilai |
  * | --------------- | ------------- |
- * | Passenger       | Fajar Nugroho |
- * | Online Check-in | Yes           |
- * | Cabin Class     | Economy       |
- * | Baggage Weight  | 24 kg         |
+ * | Penumpang | Fajar Nugroho |
+ * | Check-in Online | Ya |
+ * | Kelas Kabin | Ekonomi |
+ * | Berat Bagasi | 24kg |
  * 
- * Student Tasks
- * 1. Declare all variables.
- * 2. Implement the airline decision process.
- * 3. Display the correct message.
+ * Tugas Siswa
+ * 1. Deklarasikan semua variabel.
+ * 2. Menerapkan proses pengambilan keputusan maskapai penerbangan.
+ * 3. Tampilkan pesan yang benar.
  */
+
+const penumpang: string = "Fajar Nugroho"
+const check: boolean = true
+const kelas: string = "Ekonomi"
+const berat: number = 24
+
+console.log("Nama Penumpang", penumpang);
+console.log("Check-in : ", check);
+console.log("Kelas kabin : ", kelas);
+console.log("Berat bagasi : ", berat, "kg");
+console.log()
+
+if (!check) {
+    console.log("Harap selesaikan check-in online terlebih dahulu");
+} else {
+    if (berat > 20) {
+        if (kelas == "Ekonomi") { 
+            console.log("Diperlukan biaya bagasi tambahan");
+        } else {
+            console.log("Bagasi Tambahan Diperbolehkan")
+        }
+            
+    } else {
+        console.log (" Lanjut ke boarding pass")
+    }
+}
+
+
+

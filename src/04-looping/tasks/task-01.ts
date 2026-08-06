@@ -1,17 +1,26 @@
 /**
- * A teacher wants to verify student attendance before starting class. There are 30 students in the classroom. Instead of writing the attendance message 30 times, the teacher wants the system to display an attendance check for every student.
- * The expected output is:
+ * Seorang guru ingin memverifikasi kehadiran siswa sebelum memulai kelas. Ada 30 siswa di dalam kelas. Daripada menulis pesan kehadiran sebanyak 30 kali, guru ingin sistem menampilkan cek kehadiran setiap siswa.
+ * Keluaran yang diharapkan adalah:
  * -------------------------------------
- * Checking attendance for Student #1
- * Checking attendance for Student #2
+ * Mengecek kehadiran Siswa #1
+ * Mengecek kehadiran Siswa #2
  * ...
- * Checking attendance for Student #30
- * Attendance verification completed.
+ * Mengecek kehadiran Siswa #30
+ * Verifikasi kehadiran selesai.
  * -------------------------------------
  * 
  * Tasks: 
- * 1. Create a program using a for loop.
- * 2. Display the attendance message for every student.
- * 3. After the loop finishes, display: "Attendance verification completed"
+ * 1. Buat program menggunakan perulangan for.
+ * 2. Menampilkan pesan kehadiran setiap siswa.
+ * 3. Setelah loop selesai, tampilan: "Verifikasi kehadiran selesai"
 
  */
+
+for (let i = 1; i <= 30; i++) {
+    console.log("Mengecek Kehadiran Siswa : ", i)
+}
+console.log ("\nVerifikasi kehadiran selesai")
+
+
+
+

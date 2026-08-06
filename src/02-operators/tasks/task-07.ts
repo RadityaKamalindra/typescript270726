@@ -1,23 +1,41 @@
 /**
- * A hotel calculates a guest's payment based on the following information.
- * | Information          | Value  |
+ * Sebuah hotel menghitung pembayaran tamu berdasarkan informasi berikut.
+ * | Informasi | Nilai |
  * | -------------------- | ------ |
- * | Room Price per Night | 650000 |
- * | Nights Stayed        | 4      |
- * | Service Charge       | 120000 |
- * | Tax                  | 11%    |
- * | VIP Member           | Yes    |
+ * | Harga Kamar per Malam | 650000 |
+ * | Malam Menginap | 4 |
+ * | Biaya Layanan | 120000 |
+ * | Pajak | 11% |
+ * | Anggota VIP | Ya |
  * 
- * Business Rules
- * - VIP guests receive a 12% room discount.
- * - Tax is calculated after the discount.
- * - Service charge is not discounted.
- * - The hotel also offers free breakfast if the guest stays at least 3 nights or is a VIP member.
+ * Aturan Bisnis
+ * -Tamu VIP menerima diskon kamar sebesar 12%.
+ * -Pajak dihitung setelah diskon.
+ * -Biaya layanan tidak didiskon.
+ * -Hotel juga menawarkan sarapan gratis jika tamu menginap minimal 3 malam atau merupakan anggota VIP.
  * 
- * The system must calculate:
- * - Room subtotal
- * - Discount
- * - Tax
- * - Final payment
- * - Whether the guest is eligible for free breakfast
+ * Sistem harus menghitung:
+ * -Subtotal ruangan
+ * -Diskon
+ * -Pajak
+ * -Pembayaran terakhir
+ * -Apakah tamu berhak mendapatkan sarapan gratis
  */
+
+const harga: number = 650000
+const malam: number = 4
+const layanan: number = 120000
+const pajak: number = 0.11
+const VIP: boolean = true
+
+const diskon: number = (VIP == true) ? harga * 0.12 : 0 
+
+const MBG: string = (malam > 3 || VIP === true) ? "Dapat MBG Pagi" : "Ga Dapet MBG kyk Moklet"
+
+console.log("Subtotal nyahhh : " + ((harga * malam) + layanan))
+console.log("Diskon : " + (diskon))
+console.log("Pajak : " + pajak)
+console.log("<---]========>")
+console.log("Total Akhir : " + ((harga * malam - diskon) + ((harga * malam - diskon) * pajak) + layanan))
+console.log("Apakah dapat MBG pagi? " + MBG)
+

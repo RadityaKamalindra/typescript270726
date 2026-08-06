@@ -1,32 +1,61 @@
 /**
- * A bank evaluates loan applications using the following policy.
- * First Screening
- * Applicants must satisfy both requirements:
- * - Monthly income is at least Rp8,000,000
- * - Credit score is at least 700
- * If they pass the first screening, continue to the second screening.
+ * Sebuah bank mengevaluasi permohonan pinjaman menggunakan kebijakan berikut.
+ * Pemutaran Pertama
+ * Pelamar harus memenuhi kedua persyaratan:
+ * -Penghasilan bulanan minimal Rp8.000.000
+ * -Skor kredit minimal 700
+ * Jika lolos seleksi pertama, lanjutkan ke seleksi kedua.
  * 
- * Second Screening
- * - Existing debt must not exceed 30% of monthly income.
- * - Employment status must be permanent.
+ * Pemutaran Kedua
+ * -Hutang yang ada tidak boleh melebihi 30% dari pendapatan bulanan.
+ * -Status pekerjaan harus tetap.
  * 
  * 
- * Decision Rules:
- * - Pass both screenings → Loan Approved
- * - Pass first screening only → Manual Review
- * - Fail first screening → Loan Rejected
+ * Aturan Keputusan:
+ * -Lulus kedua pemutaran → Pinjaman Disetujui
+ * -Hanya lulus penyaringan pertama → Tinjauan Manual
+ * -Gagal dalam screening pertama → Pinjaman Ditolak
  * 
- * Today's applicant:
- * | Information        | Value       |
+ * Pelamar hari ini:
+ * | Informasi | Nilai |
  * | ------------------ | ----------- |
- * | Applicant          | Andi Wijaya |
- * | Monthly Income     | 10000000    |
- * | Credit Score       | 725         |
- * | Existing Debt      | 2500000     |
- * | Permanent Employee | Yes         |
+ * | Pemohon | Andi Wijaya |
+ * | Pendapatan Bulanan | 10000000 |
+ * | Skor Kredit | 725 |
+ * | Hutang yang Ada | 2500000 |
+ * | Karyawan Tetap | Ya |
  * 
- * Student Tasks:
- * 1. Declare all variables.
- * 2. Implement both screening stages.
- * 3. Display the loan decision.
+ * Tugas Siswa:
+ * 1. Deklarasikan semua variabel.
+ * 2. Melaksanakan kedua tahap penyaringan.
+ * 3. Menampilkan keputusan pinjaman.
  */
+const pemohon: string = "Andi Wijaya"
+const pendapatan: number = 10000000
+const skor: number = 725
+const hutang: number = 2500000
+const kartep: boolean = true
+
+
+function pertama(penghasilan: number, kridit: number): boolean {
+    return penghasilan >= 8000000 && kridit > 700
+}
+
+function kedua(utang: number, status: boolean): boolean {
+    return utang < (pendapatan * 0.3) && status
+}
+
+function pinjaman(): void {
+    if (!pertama(pendapatan, skor)) {
+        console.log("Pinjaman Ditolak !")
+        return
+    }
+
+    if (!kedua(hutang, kartep)) {
+        console.log("Tinjauan Manual")
+        return
+    }
+    console.log("Pinjaman Disetujui")
+}
+
+pinjaman()

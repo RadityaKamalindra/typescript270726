@@ -1,21 +1,21 @@
 /**
- * A programming competition stores participants' scores in the following array.
+ * Kompetisi pemrograman menyimpan skor peserta dalam susunan berikut.
  * 
  * 
- * Competition Rules
- * Gold Medal : score ≥ 95
- * Silver Medal : score 85–94
- * Bronze Medal : score 75–84
- * No Medal : below 75
+ * Peraturan Kompetisi
+ * Medali Emas: skor ≥ 95
+ * Medali Perak : skor 85–94
+ * Medali Perunggu : skor 75–84
+ * Tanpa Medali: di bawah 75
  * 
  * 
- * Student Tasks
- * Using a loop, calculate:
- * - Number of Gold Medal winners
- * - Number of Silver Medal winners
- * - Number of Bronze Medal winners
- * - Number of students without medals
- * - Average competition score
+ * Tugas Siswa
+ * Dengan menggunakan loop, hitung:
+ * -Jumlah pemenang Medali Emas
+ * -Jumlah pemenang Medali Perak
+ * -Jumlah pemenang Medali Perunggu
+ * -Jumlah siswa tanpa medali
+ * -Skor kompetisi rata-rata
  */
 
 const scores = [
@@ -24,3 +24,33 @@ const scores = [
     67, 79, 94, 83, 71,
     96, 65, 87, 74, 90
 ];
+
+let emas: number = 0
+let perak: number = 0
+let perunggu: number = 0
+let yahahagadue: number = 0
+let total: number = 0
+
+for (let i = 0; i <= 20; i++) {
+    if (scores[i] >= 95) {
+        emas++
+    } else if (scores[i] >= 85) {
+        perak++
+    } else if (scores[i] >= 75) {
+        perunggu++
+    } else if (scores[i] <= 75){
+        yahahagadue++
+    }
+
+    for (const a of scores) {
+        total += a
+    }
+}
+let rata: number = (total / 20)
+
+
+console.log("Jumlah peraih medali Emas : ", emas)
+console.log("Jumlah peraih medali Perak : ", perak)
+console.log("Jumlah peraih medali Perunggu : ", perunggu)
+console.log("Jumlah tanpa medali : ", yahahagadue)
+console.log("Rata Rata : " , rata)

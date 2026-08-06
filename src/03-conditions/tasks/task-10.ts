@@ -1,47 +1,97 @@
 /**
- * A university allows students to register for advanced programming courses only if they satisfy all academic requirements.
+ * Universitas mengizinkan mahasiswanya mendaftar untuk kursus pemrograman lanjutan hanya jika mereka memenuhi semua persyaratan akademik.
 
-Registration Process
+Proses Pendaftaran
 
-Step 1 — Academic Status
-The student must:
- - Be actively enrolled.
- - Have completed tuition payment.
+Langkah 1 — Status Akademik
+Siswa harus:
+ -Terdaftar secara aktif.
+ -Telah menyelesaikan pembayaran uang sekolah.
 
-If either requirement is not satisfied:
-Registration Rejected
+Jika salah satu persyaratan tidak terpenuhi:
+Pendaftaran Ditolak
 
-Otherwise, continue.
+Jika tidak, lanjutkan.
 
-Step 2 — Academic Requirements
-The student must:
-- Pass Programming Fundamentals.
-- Pass Database Systems.
-- Have a GPA of at least 3.20.
-If these requirements are satisfied, continue.
+Langkah 2 — Persyaratan Akademik
+Siswa harus:
+-Lulus Dasar-Dasar Pemrograman.
+-Lulus Sistem Basis Data.
+-Memiliki IPK minimal 3,20.
+Jika persyaratan ini terpenuhi, lanjutkan.
 Otherwise:
-Academic Requirements Not Met
+Persyaratan Akademik Tidak Terpenuhi
 
-Step 3 — Seat Availability
-If seats are still available:
-- Registration Successful
+Langkah 3 — Ketersediaan Kursi
+Jika kursi masih tersedia:
+-Pendaftaran Berhasil
 Otherwise:
-- Added to Waiting List
+-Ditambahkan ke Daftar Tunggu
 
-Student Information:
-| Information                     | Value       |
+Informasi Siswa:
+| Informasi | Nilai |
 | ------------------------------- | ----------- |
-| Student Name                    | Nadia Putri |
-| Active Student                  | Yes         |
-| Tuition Paid                    | Yes         |
-| Passed Programming Fundamentals | Yes         |
-| Passed Database Systems         | Yes         |
-| GPA                             | 3.45        |
-| Seats Available                 | No          |
+| Nama Siswa | Nadia Putri |
+| Siswa Aktif | Ya |
+| Uang Kuliah Dibayar | Ya |
+| Lulus Dasar-Dasar Pemrograman | Ya |
+| Sistem Database Lulus | Ya |
+| IPK | 3.45 |
+| Kursi Tersedia | Tidak |
 
-Student Tasks
-- Declare all variables.
-- Implement the registration workflow.
-- Use nested conditional statements.
-- Display the final registration result.
+Tugas Siswa
+-Deklarasikan semua variabel.
+-Menerapkan alur kerja pendaftaran.
+-Gunakan pernyataan kondisional bersarang.
+-Menampilkan hasil akhir pendaftaran.
  */
+
+const nama: string = "Nadia Putri"
+const siswa: boolean = true
+const UKT: boolean = true
+const PPLG: boolean = true
+const SawitDB: boolean = true
+const IPK: number = 3.45
+const slot: boolean = false
+
+console.log("Nama Mahasiswa : ", nama)
+console.log("Siswa Aktif : ", siswa)
+console.log("Uang Kuliah Dibayar : ", UKT)
+console.log("PPLG Lulus : ", PPLG)
+console.log("Database Lulus", SawitDB)
+console.log("IPK : ", IPK)
+console.log("Kursi Tersedia : ", slot)
+
+function StepA(aktif: boolean, UKT: boolean): boolean {
+    return aktif && UKT
+}
+
+function StepB(PPLG: boolean, DB: boolean, IPK: number): boolean {
+    return PPLG && DB && IPK > 3.20
+}
+
+function StepC(kursi: boolean): boolean {
+    return kursi
+}
+
+function selek(): void {
+    if (StepA(siswa, UKT)) {
+        StepB
+    } else {
+        console.log("Pendataran Ditolak")
+    }
+
+    if (StepB(PPLG, SawitDB, IPK)) {
+        StepC
+    } else {
+        console.log("Persyaratan Akademik Tidak Terpenuhi")
+    }
+
+    if (StepC(slot)) {
+        console.log("\nPendaftaran Berhasil")
+    } else {
+        console.log("\nDitambahkan ke Daftar Tunggu")
+    }
+}
+
+selek()

@@ -1,16 +1,31 @@
 /**
- * A company evaluates employees every month.
- * If an employee's performance score is 80 or above, they receive a performance bonus.
- * Otherwise, they do not receive a bonus.
- * Employee information:
- * | Information       | Value         |
+ * Sebuah perusahaan mengevaluasi karyawannya setiap bulan.
+ * Jika skor kinerja seorang karyawan 80 atau lebih, mereka menerima bonus kinerja.
+ * Jika tidak, mereka tidak menerima bonus.
+ * Informasi karyawan:
+ * | Informasi | Nilai |
  * | ----------------- | ------------- |
- * | Employee Name     | Dimas Pratama |
- * | Performance Score | 78            |
+ * | Nama Karyawan | Dimas Pratama |
+ * | Skor Kinerja | 78 |
  * 
  * Tasks:
- * 1. Declare the variables.
- * 2. Use an if...else statement.
- * 3. Display the evaluation result. If eligible will display "Bonus Approved", 
- * otherwise display "Bonus not approved"
+ * 1. Deklarasikan variabelnya.
+ * 2. Gunakan pernyataan if...else.
+ * 3. Menampilkan hasil evaluasi. Jika memenuhi syarat akan muncul tulisan “Bonus Disetujui”, 
+ * jika tidak tampilkan "Bonus tidak disetujui"
  */
+
+const nama: string = "Dimas Pratama"
+const skor: number = 85
+const gaji: number = 2000000
+
+console.log("Nama Karyawan : ", nama)
+console.log("Skor Kinerja : ", skor)
+console.log("Gaji awal : ", gaji)
+
+if (skor > 80) {
+    console.log("\nBonus Disetujui");
+    console.log("Gaji : ", gaji + 200000)
+} else {
+    console.log("\nBonus tidak disetujui")
+}

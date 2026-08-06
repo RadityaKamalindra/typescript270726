@@ -1,35 +1,53 @@
 /**
- * A university is selecting students for a full scholarship.
- * A student will receive the scholarship only if all of the following requirements are satisfied:
- * - GPA is at least 3.75
- * - Family monthly income is less than Rp5,000,000
- * - The student has participated in at least 3 competitions
- * - The student has no disciplinary violations
- * - The student has completed all administrative documents.
+ * Sebuah universitas sedang menyeleksi mahasiswanya untuk menerima beasiswa penuh.
+ * Seorang siswa akan menerima beasiswa hanya jika semua persyaratan berikut dipenuhi:
+ * -IPK minimal 3,75
+ * -Penghasilan bulanan keluarga kurang dari Rp5.000.000
+ * -Siswa telah mengikuti minimal 3 lomba
+ * -Siswa tidak melakukan pelanggaran disiplin
+ * -Mahasiswa telah melengkapi semua dokumen administrasi.
  * 
- * The admissions office receives the following student information.
- * | Information             | Value      |
+ * Kantor penerimaan menerima informasi siswa berikut.
+ * | Informasi | Nilai |
  * | ----------------------- | ---------- |
- * | Student Name            | Alya Putri |
- * | GPA                     | 3.89       |
- * | Family Income           | 4200000    |
- * | Competition Count       | 4          |
- * | Has Disciplinary Record | No         |
- * | Documents Complete      | Yes        |
+ * | Nama Siswa | Alya Putri |
+ * | IPK | 3.89 |
+ * | Pendapatan Keluarga | 4200000 |
+ * | Jumlah Kompetisi | 4 |
+ * | Memiliki Catatan Disiplin | Tidak |
+ * | Dokumen Lengkap | Ya |
  * 
- * If the student qualifies:
- *  - Scholarship Amount = Rp12,000,000
+ * Jika siswa memenuhi syarat:
+ *  -Jumlah Beasiswa = Rp12.000.000
  * 
  * Otherwise:
- *  - Scholarship Amount = Rp0
+ *  -Jumlah Beasiswa = Rp0
  * 
- * Finally, the system should also calculate how much funding remains if the 
- * university has a total scholarship budget of Rp500,000,000.
+ * Terakhir, sistem juga harus menghitung berapa sisa dana jika 
+ * universitas memiliki total anggaran beasiswa sebesar Rp500,000,000.
  * 
  * Task:
- * - Evaluate every requirement using comparison operators.
- * - Combine all conditions using logical operators.
- * - Determine the scholarship amount using the ternary operator.
- * - Calculate the remaining scholarship budget.
- * - Display whether the student is accepted.
+ * -Evaluasi setiap persyaratan menggunakan operator perbandingan.
+ * -Gabungkan semua kondisi menggunakan operator logika.
+ * -Tentukan jumlah beasiswa menggunakan operator ternary.
+ * -Hitung sisa anggaran beasiswa.
+ * -Menampilkan apakah siswa diterima.
  */
+
+const nama: string = "Alya Putri"
+const IPK: number = 3.89
+const PenKel: number = 4200000
+const JumKom: number = 4
+const CatDis: boolean = false
+const KelDok: boolean = true
+const diterima: boolean = true
+
+let syarat = (IPK >= 3.75) && (PenKel <= 5000000) && (JumKom >= 3) && (CatDis == false) && (KelDok == true) ? "Yes dapat Beasiswa" : "alahhhh ga dapet Beasiswa"
+
+let dana: number = 500000000 
+
+let beasiswa = (syarat = "Yes dapat Beasiswa") ? dana - 12000000 : dana - 0;
+
+console.log("Apakah Mendapat Beasiswa? " + syarat)
+console.log(syarat = true ? "Mendapat Beasiswa sebesar Rp. 12.000.000" : "Anda Bukan Penerima Beasiswa")
+console.log("Sisa Anggaran Beasiswa Sekolah : " + beasiswa)

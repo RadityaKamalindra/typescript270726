@@ -1,34 +1,68 @@
 /**
- * A university is selecting students for a full scholarship.
- * The first screening requires:
- *  - GPA ≥ 3.75
- *  - Family income < Rp5,000,000
+ * Sebuah universitas sedang menyeleksi mahasiswanya untuk menerima beasiswa penuh.
+ * Penyaringan pertama memerlukan:
+ *  -IPK ≥ 3,75
+ *  -Pendapatan keluarga < Rp5.000.000
  * 
- * If the student passes the first screening, the university performs a second screening.
- * The second screening requires:
- *  - Competition participation ≥ 3
- *  - No disciplinary violations
- *  - Administrative documents are complete
+ * Jika mahasiswa lolos seleksi pertama, universitas akan melakukan seleksi kedua.
+ * Penyaringan kedua memerlukan:
+ *  -Partisipasi kompetisi ≥ 3
+ *  -Tidak ada pelanggaran disiplin
+ *  -Dokumen administrasi sudah lengkap
  * 
- * Only students who pass both screening stages receive the scholarship.
- * Student information:
- * | Information             | Value         |
+ * Hanya siswa yang lulus kedua tahap penyaringan yang menerima beasiswa.
+ * Informasi siswa:
+ * | Informasi | Nilai |
  * | ----------------------- | ------------- |
- * | Student Name            | Fajar Hidayat |
- * | GPA                     | 3.86          |
- * | Family Income           | 4200000       |
- * | Competition Count       | 4             |
- * | Has Disciplinary Record | No            |
- * | Documents Complete      | Yes           |
+ * | Nama Siswa | Fajar Hidayat |
+ * | IPK | 3.86 |
+ * | Pendapatan Keluarga | 4200000 |
+ * | Jumlah Kompetisi | 4 |
+ * | Memiliki Catatan Disiplin | Tidak |
+ * | Dokumen Lengkap | Ya |
  * 
- * Display one of the following messages:
- *  - Scholarship Approved
- *  - Passed First Screening, but Failed Second Screening
- *  - Passed First Screening, but Failed Second Screening
+ * Tampilkan salah satu pesan berikut:
+ *  -Beasiswa Disetujui
+ *  -Lolos Pemutaran Pertama, tetapi Gagal Pemutaran Kedua
+ *  -Lolos Pemutaran Pertama, tetapi Gagal Pemutaran Kedua
  * 
- * Student Tasks
- *  - Declare all variables.
- *  - Implement the first screening.
- *  - Implement the second screening only if the first screening is passed.
- *  - Display the correct result.
+ * Tugas Siswa
+ *  -Deklarasikan semua variabel.
+ *  -Melaksanakan screening pertama.
+ *  -Melaksanakan screening kedua hanya jika screening pertama lolos.
+ *  -Tampilkan hasil yang benar.
  */
+
+// 1. DEKLARASI VARIABEL DATA SISWA
+const namaSiswa: string = "Fajar Hidayat"
+const ipk: number = 3.86
+const pendapatan: number = 4200000
+const kompetisi: number = 4
+const disiplin: boolean = false
+const dokumen: boolean = true         
+
+function screeningPertama(ipk: number, pendapatan: number): boolean {
+    return ipk >= 3.75 && pendapatan < 5000000
+}
+
+function screeningKedua(kompetisi: number, disiplin: boolean, dokumen: boolean): boolean {
+    return kompetisi >= 3 && !disiplin && dokumen
+}
+
+function prosesSeleksiBeasiswa(): void {
+    if (!screeningPertama(ipk, pendapatan)) {
+        console.log("Gagal Pemutaran Pertama")
+        return
+    }
+
+    if (!screeningKedua(kompetisi, disiplin, dokumen)) {
+        console.log("Lolos Pemutaran Pertama, tetapi Gagal Pemutaran Kedua")
+        return
+    }
+
+    console.log("Beasiswa Disetujui")
+}
+
+prosesSeleksiBeasiswa()
+
+// i love function // 

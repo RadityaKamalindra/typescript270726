@@ -1,17 +1,17 @@
 /**
- * The warehouse checks customer orders before shipping based on array below.
+ * Gudang memeriksa pesanan pelanggan sebelum dikirim berdasarkan susunan di bawah ini.
  * 
- * Business Rules
- * An order is ready to ship only if:
- * - Payment has been completed.
- * - Stock is available.
+ * Aturan Bisnis
+ * Pesanan siap dikirim hanya jika:
+ * -Pembayaran telah selesai.
+ * -Stok tersedia.
  * 
- * Student Task:
- * Loop through every order and calculate:
- * - Number of orders ready to ship
- * - Number of unpaid orders
- * - Number of orders waiting for stock
- * - Display all order IDs that are ready to ship
+ * Tugas Siswa:
+ * Ulangi setiap pesanan dan hitung:
+ * -Jumlah pesanan yang siap dikirim
+ * -Jumlah pesanan yang belum dibayar
+ * -Jumlah pesanan menunggu stok
+ * -Menampilkan semua ID pesanan yang siap dikirim
  */
 const orders = [
   { id: "ORD001", paid: true, stockAvailable: true },
@@ -21,3 +21,22 @@ const orders = [
   { id: "ORD005", paid: false, stockAvailable: false },
   { id: "ORD006", paid: true, stockAvailable: true }
 ];
+
+let siap: number = 0
+let nunggak: number = 0
+let waitbarang: number = 0
+
+for (const a of orders) {
+  if (a.paid && a.stockAvailable) {
+    siap++
+    console.log("ID : ", a.id)
+  } else if (!a.paid) {
+    nunggak++
+  } else if (!a.stockAvailable) {
+    waitbarang++
+  }
+}
+
+console.log("Siap dikirim : ", siap)
+console.log("Blom Dibayar :", nunggak)
+console.log("Nunggu Stok Barang :",waitbarang)

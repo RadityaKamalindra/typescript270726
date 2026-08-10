@@ -19,5 +19,16 @@ const stocks = [
     30, 8, 41, 0, 16
 ];
 
-console.log("Garnita Putri Arizky")
+for (const a of stocks) {
+    console.log(a)
+}
 
+for (const kuantitas of stocks) {
+    if (kuantitas == 0) {
+        console.log("Stok Habis")
+    } else if (kuantitas <= 10) {
+        console.log("Stok Rendah")
+    } else {
+        console.log("Stok Aman")
+    }
+} 

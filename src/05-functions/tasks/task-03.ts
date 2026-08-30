@@ -1,14 +1,14 @@
 /**
- * An online store stores product prices in an array in below.
- * The finance department needs to calculate the total purchase amount.
- * Instead of calculating the total directly in the main program, create reusable function.
- * The function should return the total price.
- * Student Tasks
- * 1. Create a function named calculateTotalPrice.
- * 2. The function receives an array of prices.
- * 3. Use a loop to calculate the total.
- * 4. Return the total price.
- * 5. Display the returned value.
+ * Sebuah toko online menyimpan harga produk dalam susunan di bawah ini.
+ * Departemen keuangan perlu menghitung jumlah total pembelian.
+ * Daripada menghitung total secara langsung di program utama, buatlah fungsi yang dapat digunakan kembali.
+ * Fungsi tersebut harus mengembalikan harga total.
+ * Tugas Siswa
+ * 1. Buat fungsi bernama hitungTotalPrice.
+ * 2. Fungsi menerima serangkaian harga.
+ * 3. Gunakan loop untuk menghitung totalnya.
+ * 4. Kembalikan harga total.
+ * 5. Tampilkan nilai yang dikembalikan.
  */
 
 const prices = [
@@ -18,3 +18,14 @@ const prices = [
     420000,
     125000
 ];
+
+function HTP() {
+    let tal = 0
+    for (const total of prices) {
+        tal += total
+    }
+
+    console.log(tal)
+}
+
+HTP()

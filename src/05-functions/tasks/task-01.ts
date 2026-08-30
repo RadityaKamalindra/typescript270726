@@ -1,26 +1,42 @@
 /**
- * A teacher wants to calculate students' final grades automatically. Instead of writing the same formula multiple times, the teacher asks the developer to create a reusable function.
- * The final grade is calculated using the following formula:
+ * Seorang guru ingin menghitung nilai akhir siswa secara otomatis. Daripada menulis rumus yang sama berkali-kali, guru meminta pengembang untuk membuat fungsi yang dapat digunakan kembali.
+ * Nilai akhir dihitung menggunakan rumus berikut:
  * - Assignment: 30%
- * - Midterm Exam: 30%
- * - Final Exam: 40%
+ * -Ujian Tengah Semester : 30%
+ * -Ujian Akhir: 40%
  * 
- * Three students have the following scores:
- * | Student | Assignment | Midterm | Final |
+ * Tiga siswa mempunyai nilai sebagai berikut:
+ * | Siswa | Tugas | Tengah Semester | Akhir |
  * | ------- | ---------: | ------: | ----: |
- * | Alya    |         85 |      80 |    92 |
- * | Budi    |         78 |      75 |    81 |
- * | Citra   |         90 |      88 |    95 |
+ * | alia |         85 |      80 |    92 |
+ * | Budi |         78 |      75 |    81 |
+ * | Citra |         90 |      88 |    95 |
  * 
- * The function should return the calculated final grade.
- * Student Tasks:
- * 1. Create a function named calculateFinalGrade.
- * 2. The function must receive:
- *  - assignment score
- *  - midterm score
- *  - final exam score
- * 3. Return the final grade.
- * 4. Call the function for each student.
- * 5. Display every student's final grade.
+ * Fungsi tersebut harus mengembalikan nilai akhir yang dihitung.
+ * Tugas Siswa:
+ * 1. Buat fungsi bernama hitungFinalGrade.
+ * 2. Fungsi tersebut harus menerima:
+ *  -skor tugas
+ *  -skor tengah semester
+ *  -nilai ujian akhir
+ * 3. Kembalikan nilai akhir.
+ * 4. Memanggil fungsi untuk setiap siswa.
+ * 5. Menampilkan nilai akhir setiap siswa.
 
  */
+
+function hitungFinalGrade( assignment: number, uts: number, uas: number): number {
+  const finalGrade = assignment * 0.3 + uts * 0.3 + uas * 0.4;
+
+  return finalGrade;
+}
+
+// Nilai siswa
+const alia = hitungFinalGrade(85, 80, 92);
+const budi = hitungFinalGrade(78, 75, 81);
+const citra = hitungFinalGrade(90, 88, 95);
+
+// Menampilkan nilai akhir
+console.log("Nilai akhir Alia:", alia);
+console.log("Nilai akhir Budi:", budi);
+console.log("Nilai akhir Citra:", citra);

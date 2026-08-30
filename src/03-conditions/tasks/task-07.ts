@@ -51,7 +51,7 @@ function pinjaman(): void {
         return
     }
 
-    if (!kedua(hutang, kartep)) {
+    if (!kedua(hutang, kartep)) { 
         console.log("Tinjauan Manual")
         return
     }

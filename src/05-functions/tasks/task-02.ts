@@ -1,23 +1,41 @@
 /**
- * The HR department wants to display bonus notifications for employees.
- * Business Rules
- *  - Performance score ≥ 85 → Bonus Approved
- *  - Otherwise → Bonus Not Approved
- * Employee data:
- * | Employee       | Score |
+ * Departemen HR ingin menampilkan notifikasi bonus untuk karyawan.
+ * Aturan Bisnis
+ *  -Skor kinerja ≥ 85 → Bonus Disetujui
+ *  -Jika tidak → Bonus Tidak Disetujui
+ * Data karyawan:
+ * | Karyawan | Skor |
  * | ---------------| ----- |
- * | John Cena      |    92 |
- * | Undertaker     |    76 |
- * | Rey Mysterio   |    88 |
+ * | John Cena |    92 |
+ * | Penyelenggara |    76 |
+ * | Rey Misteri |    88 |
  * 
- * Instead of repeating the decision logic, the HR department wants a reusable function.
- * The function should display the notification directly and does not return any value.
+ * Daripada mengulangi logika pengambilan keputusan, departemen SDM menginginkan fungsi yang dapat digunakan kembali.
+ * Fungsi tersebut harus menampilkan notifikasi secara langsung dan tidak mengembalikan nilai apa pun.
  * 
- * Student Tasks:
- * 1. Create a function named showBonusStatus.
- * 2. The function receives:
- *  - employee name
- *  - performance score
- * 3. Display the bonus result inside the function.
- * 4. Call the function for every employee.
+ * Tugas Siswa:
+ * 1. Buat fungsi bernama showBonusStatus.
+ * 2. Fungsi menerima:
+ *  -nama karyawan
+ *  -skor kinerja
+ * 3. Tampilkan hasil bonus di dalam fungsi.
+ * 4. Memanggil fungsi untuk setiap karyawan.
  */
+
+function SBS(A: string ,B: number): void {
+    if (B >= 85) {
+        console.log(`${A}: Dapat bonus gesszzz`)
+        return
+    } else {
+        console.log(`${A}: WLeee ga dapat bonus`)
+    }
+
+    
+}
+
+SBS("John Cena", 92)
+SBS("Undertaker", 76)
+SBS("Rey Masterio", 88)
+
+
+

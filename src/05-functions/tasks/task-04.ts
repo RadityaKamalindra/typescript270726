@@ -1,17 +1,17 @@
 /**
- * The homeroom teacher stores attendance information as follows.
- * The school wants to display an attendance report.
- * The report should include:
- * - Total Present
- * - Total Absent
- * - Names of absent students
- * The report is displayed directly on the console.
- * Student Tasks:
- * - Create a function named printAttendanceReport.
- * - The function receives the attendance array.
- * - Use looping and conditions.
- * - Display the report inside the function.
- * - The function should not return any value.
+ * Wali kelas menyimpan informasi kehadiran sebagai berikut.
+ * Sekolah ingin menampilkan laporan kehadiran.
+ * Laporan tersebut harus mencakup:
+ * -Jumlah Hadir
+ * -Jumlah Absen
+ * -Nama siswa yang tidak hadir
+ * Laporan tersebut ditampilkan langsung di konsol.
+ * Tugas Siswa:
+ * -Buat fungsi bernama printAttendanceReport.
+ * -Fungsi menerima susunan kehadiran.
+ * -Gunakan perulangan dan kondisi.
+ * -Menampilkan laporan di dalam fungsi.
+ * -Fungsi tidak boleh mengembalikan nilai apa pun.
  */
 const attendances = [
     { name: "Alya", present: true },
@@ -20,3 +20,24 @@ const attendances = [
     { name: "Dimas", present: true },
     { name: "Eka", present: false }
 ];
+
+function PAR() {
+
+    let H = 0
+    let B = 0
+    for (const a of attendances) {
+        if (a.present) {
+            H++
+        } else {
+            B++
+            console.log("ga masuk :", a.name);
+        }
+
+        
+    }
+
+    console.log("Hadir :", H)
+    console.log("Absen :",B)
+}
+
+PAR()

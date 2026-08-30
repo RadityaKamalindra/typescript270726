@@ -1,3 +1,4 @@
 {
-  "commentTranslate.targetLanguage": "id"
+  "commentTranslate.targetLanguage": "id",
+  "commentTranslate.hover.enabled": true
 }

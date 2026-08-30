@@ -1,27 +1,33 @@
 /**
- * An LMS stores assignment submission data at following array.
- * Business Rules
- * - Passing score = 75
- * - Students who do not submit receive 0
- * - Submitted assignments below 75 require revision.
+ * LMS menyimpan data pengiriman tugas di array berikut.
+ * Aturan Bisnis
+ * -Nilai kelulusan = 75
+ * -Siswa yang tidak menyerahkan menerima 0
+ * -Tugas yang diserahkan di bawah 75 memerlukan revisi.
  * 
- * The principal requests a report showing:
- * - Total students
- * - Submitted assignments
- * - Missing assignments
- * - Passed students
- * - Students requiring revision
- * - Average score
- * - Highest score
- * - Lowest score
+ * Kepala sekolah meminta laporan yang menunjukkan:
+ * -Jumlah siswa
+ * -Tugas yang diserahkan
+ * -Tugas hilang
+ * -Lulus siswa
+ * -Siswa yang memerlukan revisi
+ * -Skor rata-rata
+ * -Skor tertinggi
+ * -Skor terendah
  * 
- * Student Tasks
- * 1. Design your own functions.
- * At minimum, your solution must contain:
- * - 7 non-void functions
- * - 1 void function to display the report.
+ * Tugas Siswa
+ * 1. Rancang fungsi Anda sendiri.
+ * Minimal, solusi Anda harus mengandung:
+ * -7 fungsi yang tidak batal
+ * -1 fungsi void untuk menampilkan laporan.
  * 
  */
+
+type mlukok = {
+    student: string
+    submitted: boolean
+    score: number
+}
 const submissions = [
     {
         student: "Alya",
@@ -54,3 +60,90 @@ const submissions = [
         score: 96
     }
 ];
+
+function hehe(a: mlukok[]){
+    return a.length
+}
+
+function haha(a: mlukok[]) {
+    let c = 0
+    for (let b of a) {
+        if (b.submitted) {
+            c++
+        }
+    }
+
+    return c
+}
+
+function hihi(a: mlukok[]) {
+  let c = 0;
+  for (let b of a) {
+    if (!b.submitted) {
+      c++;
+    }
+  }
+
+  return c;
+}
+
+function huhu(a: mlukok[]) {
+    for (let b of a) {
+        if (b.score >= 75) {
+            console.log(b.student)
+        }
+        
+    }
+    
+
+}
+
+function hoho(a: mlukok[]) {
+    for (let b of a) {
+        if (b.score <= 75) {
+            console.log(b.student)
+        }
+    }
+}
+
+function a(b: mlukok[]) {
+  let d = 0  
+    for (let c of b) {
+        d += c.score
+    }
+    return d/b.length
+}
+
+function b(a: mlukok[]) {
+    let h = 0
+    for (let c of a) {
+        if (c.score >= h) {
+            h = c.score
+        }
+    }
+    return h
+}
+
+function c(a: mlukok[]) {
+  let h = 0;
+  for (let b of a) {
+    if (b.score <= h) {
+      h = b.score;
+    }
+  }
+  return h;
+}
+
+function print(submissions: mlukok[]) {
+    console.log(hehe(submissions));
+    console.log(haha(submissions));
+    console.log(hihi(submissions));
+    console.log(huhu(submissions));
+    console.log(hoho(submissions));
+    console.log(a(submissions));
+    console.log(b(submissions));
+    console.log(c(submissions));
+}
+
+print(submissions)
+

@@ -26,21 +26,35 @@ const scores = [85, 72, 91, 64, 88];
  */
 
 function processScores(
-    scores: number[],
-    callback: (score: number) => void
+  scores: number[],
+  callback: (score: number) => void,
 ): void {
-    // implementation
+  // implementation
+  for (let i = 0; i < scores.length; i++) {
+    callback(scores[i]);
+  }
 }
 
 function printScore(score: number) {
-    // implementation
+  // implementation
+  console.log(`Score: ${score}`);
 }
 
 function showGrade(score: number) {
-    // implementation
+  // implementation
+  let grade: String = ``;
+  if (score >= 90) {
+    grade = `A`;
+  } else if (score >= 80) {
+    grade = `B`;
+  } else if (score >= 70) {
+    grade = `C`;
+  } else {
+    grade = `D`;
+  }
+  console.log(`Score: ${score}, grade: ${grade}`);
 }
 
-
 // implementation of callback function
-processScores(scores, printScore)
-processScores(scores, showGrade)
+processScores(scores, printScore);
+processScores(scores, showGrade);

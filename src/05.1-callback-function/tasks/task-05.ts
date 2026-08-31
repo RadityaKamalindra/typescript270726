@@ -51,35 +51,58 @@ const orders: Order[] = [
  * 
  */
 
-type SHIPPING_CATEGORY = "FREE SHIPPING" | "STANDARD SHIPPING" | "ECONOMY SHIPPING"
-type ORDER_STATUS = "PAID" | "UNPAID"
-type PaymentStatusOrder = Order & { status: ORDER_STATUS }
-type ShippingCategoryOrder = Order & { shippingStatus: SHIPPING_CATEGORY }
+type SHIPPING_CATEGORY =
+  | "FREE SHIPPING"
+  | "STANDARD SHIPPING"
+  | "ECONOMY SHIPPING";
+type ORDER_STATUS = "PAID" | "UNPAID";
+type PaymentStatusOrder = Order & { status: ORDER_STATUS };
+type ShippingCategoryOrder = Order & { shippingStatus: SHIPPING_CATEGORY };
 
 function getPaymentStatus(selectedOrder: Order): PaymentStatusOrder {
-    // implement to determine payment status order
-    // this function return order data within status or order
-    return;
+  // implement to determine payment status order
+  // this function return order data within status or order
+  const paymentstatus = selectedOrder.paid;
+  let orderstatus: ORDER_STATUS = `UNPAID`;
+  if (paymentstatus) {
+    orderstatus = `PAID`;
+  }
+  return {
+    ...selectedOrder,
+    status: orderstatus,
+  };
 }
-
 
 function getShippingCategory(selectedOrder: Order): ShippingCategoryOrder {
-    // implement to determine shipping category of order
-    // this function return order data within shipping cateogory
-    return;
+  // implement to determine shipping category of order
+  // this function return order data within shipping cateogory
+  const ShippingStatus = selectedOrder.total;
+  let shippingStat: SHIPPING_CATEGORY = `ECONOMY SHIPPING`;
+  if (ShippingStatus >= 1500000) {
+    shippingStat = `FREE SHIPPING`;
+  } else if (ShippingStatus >= 500000) {
+    shippingStat = `STANDARD SHIPPING`;
+  }
+  return {
+    ...selectedOrder,
+    shippingStatus: shippingStat,
+  };
 }
 
-function processOrder<T>(
-    arr: Order[],
-    callback: (order: Order) => T): T[] {
-    // implement for callback
-    return;
+function processOrder<T>(arr: Order[], callback: (order: Order) => T): T[] {
+  // implement for callback
+  const results: T[] = [];
+  for (let index = 0; index < arr.length; index++) {
+    const result = callback(arr[index]);
+    results.push(result);
+  }
+  return results;
 }
 
-const orderWithPaymentStatus = processOrder(orders, getPaymentStatus)
-const orderWithShippingCategory = processOrder(orders, getShippingCategory)
+const orderWithPaymentStatus = processOrder(orders, getPaymentStatus);
+const orderWithShippingCategory = processOrder(orders, getShippingCategory);
 
 console.log(`====== ORDER WITH PAYMENT STATUS ======`);
-console.log({ orders: orderWithPaymentStatus })
+console.log({ orders: orderWithPaymentStatus });
 console.log(`====== ORDER WITH SHIPPING CATEGORY ======`);
-console.log({ orders: orderWithShippingCategory })
+console.log({ orders: orderWithShippingCategory });

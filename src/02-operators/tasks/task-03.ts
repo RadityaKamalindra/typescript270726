@@ -39,7 +39,7 @@ if (JamLembur > 10) {
     console.log("Total gaji bersih: " + GajiAkhir);
 }
     
-    
+
 
 
 

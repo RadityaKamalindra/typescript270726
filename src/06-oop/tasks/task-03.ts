@@ -1,0 +1,98 @@
+/**
+ * A school library wants to create a digital system for managing books.
+ * 
+ * Each book has:
+ * - ISBN
+ * - Title
+ * - Author
+ * - Total pages
+ * - Borrowing status
+ * 
+ * The library wants to prevent users from directly changing the borrowing status.
+ * Instead, the status can only change through:
+ * - borrow()
+ * - returnBook()
+ * 
+ * Business Rules
+ * - A book can only be borrowed when: status = available
+ * - When a book is borrowed: available → borrowed
+ * - A borrowed book cannot be borrowed again.
+ * - When the book is returned: borrowed → available
+ * - An available book cannot be returned.
+ * 
+ * Tasks:
+ * - create class Book that minimum has property and method below:
+ *   - private status: string;
+ *   - borrow()
+ *   - returnBook()
+ *   - showInfo()
+ *   - isAvailable()
+ * - implement class with at least 2 objects
+ */
+
+class Book {
+  private status: string;
+
+  constructor(
+    public isbn: string,
+    public title: string,
+    public author: string,
+    public totalPages: number,
+  ) {
+    this.status = "available";
+  }
+
+  borrow(): void {
+    if (this.status === "borrowed") {
+      console.log(`${this.title} is already borrowed.`);
+      return;
+    }
+
+    this.status = "borrowed";
+    console.log(`${this.title} has been borrowed.`);
+  }
+
+  returnBook(): void {
+    if (this.status === "available") {
+      console.log(`${this.title} is already available.`);
+      return;
+    }
+
+    this.status = "available";
+    console.log(`${this.title} has been returned.`);
+  }
+
+  showInfo(): void {
+    console.log(`ISBN: ${this.isbn}`);
+    console.log(`Title: ${this.title}`);
+    console.log(`Author: ${this.author}`);
+    console.log(`Pages: ${this.totalPages}`);
+    console.log(`Status: ${this.status}`);
+    console.log("--------------------");
+  }
+
+  isAvailable(): boolean {
+    return this.status === "available";
+  }
+}
+
+const book1 = new Book("978-001", "Learn TypeScript", "Zakaria", 300);
+
+const book2 = new Book(
+  "978-002",
+  "Object Oriented Programming",
+  "Programming Author",
+  250,
+);
+
+book1.showInfo();
+
+book1.borrow();
+console.log(book1.isAvailable());
+
+book1.borrow();
+
+book1.returnBook();
+console.log(book1.isAvailable());
+
+book2.showInfo();

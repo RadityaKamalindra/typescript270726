@@ -23,3 +23,7 @@ const students = [
   { name: "Eka", score: 55 },
 ];
 
+console.log(students.map(a => a.name))
+console.log(students.filter(x => x.score >= 70))
+console.log(students.filter(x => x.name == "Citra"))
+console.log((students.reduce((sum, b) => sum + b.score,0))/students.length)

@@ -8,6 +8,8 @@
  * 5. Sort available products from most expensive → cheapest.
  */
 
+import { log } from "node:console";
+
 const products = [
     {
         id: 1,
@@ -45,3 +47,13 @@ const products = [
         stock: 3,
     },
 ];
+
+console.log(products.map(a => a));
+console.log();
+console.log(products.map(x => x.name));
+console.log();
+console.log(products.reduce((sum, x) => sum + x.stock, 0))
+console.log();
+console.log(products.sort((a,b) => b.price-a.price))
+
+

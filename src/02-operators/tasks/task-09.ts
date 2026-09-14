@@ -86,3 +86,5 @@ console.log("Pajaxxxxxxxxxxxxxxxxx : ", (((subtotal - diskon) - customer.voucher
 console.log("Pembayaran Akhieeeeeeeeeerrrrrrrrrrrrrrrrrrrr : ", ((subtotal - diskon) - customer.voucher) + (((subtotal - diskon) - customer.voucher) * 0.11))
 console.log("Poinzzyyy : ", customer.poin)
 console.log("Free COD : ", COD)
+
+
